@@ -2,7 +2,7 @@
   <div id="particles-js"></div>
   <div class="hero-content">
     <h1>{{ site.author.name | default: "Your Name" }}</h1>
-    <h2>{{ site.author.title | default: "Quality Control Engineer" }}</h2>
+    <h2>{{ site.author.title | default: "Junior SOC Analyst" }}</h2>
     <div class="socials">
       <a href="mailto:{{ site.author.email | default: 'you@example.com' }}" title="Email"><i class="fas fa-envelope"></i></a>
       <a href="https://twitter.com/{{ site.author.twitter | default: 'yourusername' }}" title="Twitter"><i class="fab fa-twitter"></i></a>
@@ -20,54 +20,54 @@
 <div id="about" class="section expertise">
   <div class="section-title">My Expertise</div>
   <p>
-    I'm {{ site.author.name | default: "Your Name" }}, a {{ site.author.title | default: "Quality Control Engineer" }}
-    passionate about quality inspection, reporting automation, and data-driven insights.
-    I specialize in building QC workflows — Bus QC and Area QC (Station → Location → Defects),
-    daily history snapshots, overdue-issues tracking, and generating professional A4 PowerPoint,
-    PDF and Excel reports with Python, Streamlit and python-pptx — turning field inspections
-    into clear, presentation-ready reports in seconds.
+    I'm {{ site.author.name | default: "Your Name" }}, a {{ site.author.title | default: "Junior SOC Analyst" }}
+    focused on Security Operations, SIEM and log analysis — monitoring, alert triage,
+    threat detection and incident analysis. I work with Splunk, Sysmon telemetry, and detection
+    logic to turn noisy logs into clear findings. I also built and currently manage a
+    QC reporting system running live in production at the Pyramids (Bus QC + Area QC,
+    PowerPoint / PDF / Excel automation with Python and Streamlit).
   </p>
 </div>
 
 <div id="projects" class="section">
   <div class="section-title">Featured Projects</div>
 
-  <!-- Project 1: QC-PPT-Generator -->
+  <!-- Project 1: SOC / SIEM Lab -->
   <div class="project">
     <div class="project-text">
-      <h3>QC Report Generator — Quality Control PowerPoint</h3>
+      <h3>SIEM & Log Analysis Lab — SOC Alert Triage</h3>
       <ul>
-        <li>Two report modes: Bus QC and Area QC (Station → Location → Defects)</li>
-        <li>Daily History snapshots — append-only, versioned, photos preserved</li>
-        <li>Overdue Issues tracking with manual status: Fixed / Still Existing / 🔴 أكثر من شهر</li>
-        <li>Professional A4 Portrait PowerPoint + PDF + Excel export, Arabic RTL support</li>
+        <li>Lab: Windows + Sysmon + Splunk — collecting and querying security telemetry</li>
+        <li>Alert triage workflow: detection → analysis → escalation notes</li>
+        <li>Log analysis: authentication, process creation, network and persistence artifacts</li>
+        <li>Writing and tuning detection logic to reduce noise and catch real threats</li>
+      </ul>
+      <a class="btn" href="https://github.com/{{ site.author.github | default: 'yourusername' }}" target="_blank">Check it out</a>
+    </div>
+    <div class="project-img">
+      <div class="img-placeholder qc" style="background:linear-gradient(135deg,#0b2a4a,#1e3a5f,#0ea5a4)">
+        <div>🛡️📊</div>
+        <small>SOC • SIEM<br>Splunk • Sysmon • Logs</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 2: QC production system -->
+  <div class="project reverse">
+    <div class="project-text">
+      <h3>QC Report Generator — Live Production System (Pyramids)</h3>
+      <ul>
+        <li>System I built and currently manage, running live at the Pyramids</li>
+        <li>Two modes: Bus QC and Area QC (Station → Location → Defects) with daily history</li>
+        <li>Overdue Issues tracking: Fixed / Still Existing / 🔴 أكثر من شهر</li>
+        <li>Professional A4 PowerPoint + PDF + Excel export, Arabic RTL support</li>
       </ul>
       <a class="btn" href="https://github.com/{{ site.author.github | default: 'yourusername' }}/QC-PPT-Generator" target="_blank">Check it out</a>
     </div>
     <div class="project-img">
       <div class="img-placeholder qc">
         <div>📊🚌</div>
-        <small>QC-PPT-Generator<br>Streamlit • python-pptx • fpdf2</small>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project 2: Overdue / History system -->
-  <div class="project reverse">
-    <div class="project-text">
-      <h3>Overdue Issues &amp; History System</h3>
-      <ul>
-        <li>(Kali-style workflow: Report + Track + Export) — Station → Location grouping</li>
-        <li>Filter by date, status, and Quality Area with bulk Select / Fix / Delete</li>
-        <li>True per-issue ages from original report date, immutable history log</li>
-        <li>Arabic cover + per-issue age badge in PowerPoint and PDF</li>
-      </ul>
-      <a class="btn" href="https://github.com/{{ site.author.github | default: 'yourusername' }}/QC-PPT-Generator" target="_blank">Check it out</a>
-    </div>
-    <div class="project-img">
-      <div class="img-placeholder qc" style="background:linear-gradient(135deg,#0b2a3a,#155e75,#0ea5a4)">
-        <div>⚠️📁</div>
-        <small>Overdue + History<br>JSON • Excel • PowerPoint</small>
+        <small>QC-PPT-Generator • Live<br>Streamlit • python-pptx • fpdf2</small>
       </div>
     </div>
   </div>

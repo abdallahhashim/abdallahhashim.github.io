@@ -1,16 +1,23 @@
-# Abdallah Hashim — Portfolio
+# Abdallah Hashim — Junior SOC Analyst | Portfolio
 
 🌐 Live: **https://abdallahhashim.github.io** — also **/aboutme/**
 
 Portfolio & projects blog built with Jekyll + GitHub Pages, same style as `0xislvm.github.io/aboutme/`:
 - Full-screen hero with particles network
-- My Expertise
-- Featured Projects (QC Report Generator)
+- My Expertise (SOC / SIEM / Log Analysis)
+- Featured Projects
 - Footer © + Build with Jekyll
+
+## About
+
+Junior SOC Analyst — Security Operations, SIEM & Log Analysis.
+I also built and manage a QC reporting system running live in production at the Pyramids.
 
 ## Featured Projects
 
-**QC Report Generator** — Quality Control PowerPoint automation (Python, Streamlit, python-pptx)
+**SIEM & Log Analysis Lab** — SOC alert triage, Splunk + Sysmon, detection tuning
+
+**QC Report Generator** — live production system at the Pyramids (Python, Streamlit, python-pptx)
 - Bus QC + Area QC (Station → Location → Defects)
 - Daily History + Overdue Issues tracking
 - A4 PowerPoint / PDF / Excel, Arabic RTL
