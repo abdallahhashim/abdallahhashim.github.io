@@ -65,7 +65,51 @@ a { text-decoration: none; color: inherit; }
   text-shadow: 0 0 8px rgba(0,255,157,0.6);
   transform: rotate(-12deg);
 }
-/* planet ring */
+/* rotating surface — تشكيل الكوكب بيلف */
+.planet-spin {
+  position: absolute;
+  inset: -25%;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(from 0deg, rgba(0,255,157,0.07) 0deg 9deg, transparent 9deg 26deg),
+    radial-gradient(circle at 30% 32%, rgba(0,255,157,0.20) 0%, transparent 22%),
+    radial-gradient(circle at 62% 55%, rgba(0,180,255,0.14) 0%, transparent 26%),
+    radial-gradient(circle at 45% 70%, rgba(0,255,157,0.10) 0%, transparent 20%),
+    radial-gradient(circle at 70% 28%, rgba(0,255,157,0.12) 0%, transparent 18%);
+  animation: planetSpin 70s linear infinite;
+  pointer-events: none;
+}
+@keyframes planetSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+/* glowing dots from inside — نقط منورة بتلف مع الكوكب */
+.planet-dots {
+  position: absolute;
+  inset: 6%;
+  border-radius: 50%;
+  animation: planetSpin 110s linear infinite reverse;
+  pointer-events: none;
+}
+.planet-dots i {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #7dffc9;
+  box-shadow: 0 0 10px 2px rgba(0,255,157,0.8), 0 0 26px 6px rgba(0,255,157,0.35);
+  animation: dotTwinkle 2.8s ease-in-out infinite;
+}
+.planet-dots i:nth-child(3n) {
+  width: 4px; height: 4px;
+  background: #7dc4ff;
+  box-shadow: 0 0 10px 2px rgba(0,180,255,0.8), 0 0 22px 6px rgba(0,180,255,0.3);
+}
+@keyframes dotTwinkle {
+  0%,100% { opacity: 0.35; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.35); }
+}
+/* planet ring — بيلمع ببطء */
 .planet::after {
   content: "";
   position: absolute;
@@ -77,6 +121,11 @@ a { text-decoration: none; color: inherit; }
   border: 2px solid rgba(0,255,157,0.45);
   border-radius: 50%;
   box-shadow: 0 0 30px rgba(0,255,157,0.35), inset 0 0 20px rgba(0,255,157,0.2);
+  animation: ringPulse 5s ease-in-out infinite;
+}
+@keyframes ringPulse {
+  0%,100% { opacity: 0.75; }
+  50% { opacity: 1; }
 }
 /* glow behind text */
 .hero-glow {
