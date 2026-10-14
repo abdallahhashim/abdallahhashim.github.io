@@ -10,7 +10,7 @@ author:
 url: "https://abdallahhashim.github.io"
 baseurl: ""
 # Google Analytics 4 — حط الـ Measurement ID بتاعك هنا (مثال: G-ABC123XYZ)
-google_analytics: ""
+google_analytics: "G-HMST0ECXW8"
 markdown: kramdown
 theme: minima
 plugins:
