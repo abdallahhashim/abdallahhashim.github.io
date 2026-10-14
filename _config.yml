@@ -1,0 +1,16 @@
+title: Your Name
+description: Portfolio & Projects Blog
+author:
+  name: Your Name
+  title: Quality Control Engineer
+  email: you@example.com
+  github: yourusername
+  linkedin: yourusername
+  twitter: yourusername
+url: "https://yourusername.github.io"
+baseurl: ""
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

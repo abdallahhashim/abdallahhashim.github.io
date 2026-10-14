@@ -1,0 +1,81 @@
+<div class="hero">
+  <div id="particles-js"></div>
+  <div class="hero-content">
+    <h1>{{ site.author.name | default: "Your Name" }}</h1>
+    <h2>{{ site.author.title | default: "Quality Control Engineer" }}</h2>
+    <div class="socials">
+      <a href="mailto:{{ site.author.email | default: 'you@example.com' }}" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href=https://twitter.com/{{ site.author.twitter | default: 'yourusername' }}" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href=https://linkedin.com/in/{{ site.author.linkedin | default: 'yourusername' }}" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href=https://github.com/{{ site.author.github | default: 'yourusername' }}" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <div class="hero-links">
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+    </div>
+  </div>
+  <a class="scroll-down" href="#about">﹀</a>
+</div>
+
+<div id="about" class="section expertise">
+  <div class="section-title">My Expertise</div>
+  <p>
+    I'm {{ site.author.name | default: "Your Name" }}, a {{ site.author.title | default: "Quality Control Engineer" }}
+    passionate about quality inspection, reporting automation, and data-driven insights.
+    I specialize in building QC workflows — Bus QC and Area QC (Station → Location → Defects),
+    daily history snapshots, overdue-issues tracking, and generating professional A4 PowerPoint,
+    PDF and Excel reports with Python, Streamlit and python-pptx — turning field inspections
+    into clear, presentation-ready reports in seconds.
+  </p>
+</div>
+
+<div id="projects" class="section">
+  <div class="section-title">Featured Projects</div>
+
+  <!-- Project 1: QC-PPT-Generator -->
+  <div class="project">
+    <div class="project-text">
+      <h3>QC Report Generator — Quality Control PowerPoint</h3>
+      <ul>
+        <li>Two report modes: Bus QC and Area QC (Station → Location → Defects)</li>
+        <li>Daily History snapshots — append-only, versioned, photos preserved</li>
+        <li>Overdue Issues tracking with manual status: Fixed / Still Existing / 🔴 أكثر من شهر</li>
+        <li>Professional A4 Portrait PowerPoint + PDF + Excel export, Arabic RTL support</li>
+      </ul>
+      <a class="btn" href=https://github.com/{{ site.author.github | default: 'yourusername' }}/QC-PPT-Generator" target="_blank">Check it out</a>
+    </div>
+    <div class="project-img">
+      <div class="img-placeholder qc">
+        <div>📊🚌</div>
+        <small>QC-PPT-Generator<br>Streamlit • python-pptx • fpdf2</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 2: Overdue / History system -->
+  <div class="project reverse">
+    <div class="project-text">
+      <h3>Overdue Issues &amp; History System</h3>
+      <ul>
+        <li>(Kali-style workflow: Report + Track + Export) — Station → Location grouping</li>
+        <li>Filter by date, status, and Quality Area with bulk Select / Fix / Delete</li>
+        <li>True per-issue ages from original report date, immutable history log</li>
+        <li>Arabic cover + per-issue age badge in PowerPoint and PDF</li>
+      </ul>
+      <a class="btn" href=https://github.com/{{ site.author.github | default: 'yourusername' }}/QC-PPT-Generator" target="_blank">Check it out</a>
+    </div>
+    <div class="project-img">
+      <div class="img-placeholder qc" style="background:linear-gradient(135deg,#0b2a3a,#155e75,#0ea5a4)">
+        <div>⚠️📁</div>
+        <small>Overdue + History<br>JSON • Excel • PowerPoint</small>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>© {{ site.author.name | default: "Your Name" }}</div>
+  <br>
+  <div>Build with Jekyll <span class="heart">♥</span></div>
+</footer>
