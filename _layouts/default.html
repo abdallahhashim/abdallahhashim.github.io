@@ -6,13 +6,23 @@
   <title>{{ site.author.name | default: "Your Name" }} | {{ site.author.title | default: "Portfolio" }}</title>
   <meta name="description" content="{{ site.description }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v=8">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v=9">
   {% seo %}
+  {% if site.google_analytics %}
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
 </head>
 <body>
   {{ content }}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-  <script src="{{ '/assets/js/particles-config.js' | relative_url }}?v=8"></script>
-  <script src="{{ '/assets/js/hero-space.js' | relative_url }}?v=8"></script>
+  <script src="{{ '/assets/js/particles-config.js' | relative_url }}?v=9"></script>
+  <script src="{{ '/assets/js/hero-space.js' | relative_url }}?v=9"></script>
 </body>
 </html>

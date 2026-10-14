@@ -9,6 +9,8 @@ author:
   twitter: abdallahhashim
 url: "https://abdallahhashim.github.io"
 baseurl: ""
+# Google Analytics 4 — حط الـ Measurement ID بتاعك هنا (مثال: G-ABC123XYZ)
+google_analytics: ""
 markdown: kramdown
 theme: minima
 plugins:
