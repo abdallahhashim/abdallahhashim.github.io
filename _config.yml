@@ -1,13 +1,13 @@
-title: Your Name
+title: Abdallah Hashim
 description: Portfolio & Projects Blog
 author:
-  name: Your Name
+  name: Abdallah Hashim
   title: Quality Control Engineer
   email: you@example.com
-  github: yourusername
-  linkedin: yourusername
-  twitter: yourusername
-url: "https://yourusername.github.io"
+  github: abdallahhashim
+  linkedin: abdallahhashim
+  twitter: abdallahhashim
+url: "https://abdallahhashim.github.io"
 baseurl: ""
 markdown: kramdown
 theme: minima
