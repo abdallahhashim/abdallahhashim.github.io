@@ -65,6 +65,35 @@ a { text-decoration: none; color: inherit; }
   text-shadow: 0 0 8px rgba(0,255,157,0.6);
   transform: rotate(-12deg);
 }
+/* world map — خريطة بتلف جوا الكوكب */
+.planet-map {
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 200%;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg");
+  background-size: 50% 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  filter: invert(1) sepia(1) saturate(4) hue-rotate(95deg) brightness(0.8);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  animation: mapSlide 45s linear infinite;
+  pointer-events: none;
+}
+@keyframes mapSlide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+/* radar sweep — مسح رادار هاكر */
+.planet-radar {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(0,255,157,0.28) 0deg, transparent 70deg);
+  mix-blend-mode: screen;
+  animation: planetSpin 6s linear infinite;
+  pointer-events: none;
+}
 /* rotating surface — تشكيل الكوكب بيلف */
 .planet-spin {
   position: absolute;
@@ -104,6 +133,39 @@ a { text-decoration: none; color: inherit; }
   width: 4px; height: 4px;
   background: #7dc4ff;
   box-shadow: 0 0 10px 2px rgba(0,180,255,0.8), 0 0 22px 6px rgba(0,180,255,0.3);
+}
+/* hacked endpoint — نقطة حمرا بتنبض زي جهاز مخترق */
+.planet-dots i.hacked {
+  width: 7px; height: 7px;
+  background: #ff3b5c;
+  box-shadow: 0 0 12px 3px rgba(255,59,92,0.9), 0 0 30px 8px rgba(255,59,92,0.35);
+  animation: dotTwinkle 1.6s ease-in-out infinite;
+  z-index: 2;
+}
+.planet-dots i.hacked::before {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border: 1px solid rgba(255,59,92,0.8);
+  border-radius: 50%;
+  animation: ping 1.8s ease-out infinite;
+}
+@keyframes ping {
+  from { transform: scale(0.5); opacity: 1; }
+  to { transform: scale(2.4); opacity: 0; }
+}
+.planet-dots i.hacked::after {
+  content: attr(data-ip);
+  position: absolute;
+  left: 12px;
+  top: -8px;
+  white-space: nowrap;
+  font-family: Consolas, monospace;
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #ff8ba0;
+  text-shadow: 0 0 8px rgba(255,59,92,0.8);
 }
 @keyframes dotTwinkle {
   0%,100% { opacity: 0.35; transform: scale(0.8); }
