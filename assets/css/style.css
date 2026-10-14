@@ -7,7 +7,7 @@ body {
 }
 a { text-decoration: none; color: inherit; }
 
-/* HERO — زي الصورة الأولى */
+/* HERO — black matte + hacker planet */
 .hero {
   position: relative;
   height: 100vh;
@@ -16,8 +16,94 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(180deg, #7d5f90 0%, #5a5a7e 35%, #2c3f63 65%, #14334d 100%);
+  background: radial-gradient(ellipse at 72% 28%, #0e1826 0%, #070b12 42%, #020304 75%, #000000 100%);
   overflow: hidden;
+}
+/* subtle grid floor */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,157,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,157,0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  z-index: 0;
+}
+/* PLANET */
+.planet {
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(62vw, 560px);
+  height: min(62vw, 560px);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 30%, rgba(0,255,157,0.35) 0%, transparent 28%),
+    radial-gradient(circle at 38% 38%, #23414f 0%, #101d27 34%, #05090e 62%, #000 100%);
+  box-shadow:
+    0 0 120px rgba(0,255,157,0.22),
+    0 0 260px rgba(0,180,255,0.12),
+    inset -50px -40px 120px rgba(0,0,0,0.95),
+    inset 20px 20px 80px rgba(0,255,157,0.08);
+  z-index: 0;
+  transition: transform 0.25s ease-out;
+  overflow: hidden;
+}
+/* terminal text on planet */
+.planet::before {
+  content: "01010101 $_> nmap -sV 10.0.0.0/24\A.$#> tcpdump -i eth0\A 0x7f 0x45 0x4c 0x46  ...\A[+] shell obtained\A[*] SIEM alert triaged\A 101010 SOC 011010";
+  position: absolute;
+  inset: 12%;
+  white-space: pre;
+  font-family: Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.9;
+  color: rgba(0,255,157,0.5);
+  text-shadow: 0 0 8px rgba(0,255,157,0.6);
+  transform: rotate(-12deg);
+}
+/* planet ring */
+.planet::after {
+  content: "";
+  position: absolute;
+  left: -22%;
+  top: 50%;
+  width: 144%;
+  height: 34%;
+  transform: translateY(-50%) rotate(-18deg);
+  border: 2px solid rgba(0,255,157,0.45);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(0,255,157,0.35), inset 0 0 20px rgba(0,255,157,0.2);
+}
+/* glow behind text */
+.hero-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 700px;
+  height: 700px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0,255,157,0.08) 0%, transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+}
+/* floating hacker symbols */
+.code-float {
+  position: absolute;
+  font-family: Consolas, monospace;
+  color: rgba(0,255,157,0.55);
+  font-size: 1.1rem;
+  z-index: 1;
+  animation: floaty 7s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(0,255,157,0.5);
+  pointer-events: none;
+}
+@keyframes floaty {
+  0%,100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(-22px); opacity: 1; }
 }
 #particles-js {
   position: absolute;
@@ -32,8 +118,9 @@ a { text-decoration: none; color: inherit; }
 }
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   padding: 0 20px;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.9);
 }
 .hero-content h1 {
   font-size: clamp(3rem, 8vw, 5.5rem);
