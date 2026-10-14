@@ -1,7 +1,8 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  background: #12344d;
+  background: #030507;
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(0,255,157,0.05) 0%, transparent 55%);
   color: #fff;
   line-height: 1.7;
 }
@@ -377,7 +378,8 @@ a { text-decoration: none; color: inherit; }
 
 /* FOOTER */
 footer {
-  background: #0a1e2e;
+  background: #000;
+  border-top: 1px solid rgba(0,255,157,0.15);
   text-align: center;
   padding: 32px 20px;
   color: #dce6ee;
